@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+TEPIRANU Coffee & Chill
+</title>
+<style>
+
+/* =====================
+RESET
+===================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+}
+body{
+
+background:#faf4e8;
+
+color:#26372d;
+
+}
+
+/* =====================
+HEADER
+===================== */
+
+
+header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(12px);
+
+z-index:100;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+}
+
+
+
+.logo img{
+
+height:70px;
+
+width:auto;
+
+object-fit:contain;
+
+}
+
+
+
+.logo span{
+
+
+display:block;
+
+font-size:12px;
+
+font-weight:400;
+
+
+}
+
+
+
+
+nav a{
+
+
+text-decoration:none;
+
+color:#21432f;
+
+font-weight:600;
+
+margin-left:25px;
+
+
+}
+
+
+
+/* =====================
+HERO
+===================== */
+
+
+.hero{
+
+
+height:100vh;
+
+
+background:
+
+linear-gradient(
+
+rgba(0,0,0,.35),
+
+rgba(0,0,0,.55)
+
+),
+
+
+url("images/danau.jpg");
+
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+
+display:flex;
+
+align-items:center;
+
+
+
+padding:8%;
+
+
+
+color:white;
+
+
+}
+
+
+
+.hero-content{
+
+
+max-width:600px;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:75px;
+
+line-height:1.05;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:20px;
+
+margin:25px 0;
+
+
+}
+
+
+
+
+button{
+
+
+border:none;
+
+background:#21432f;
+
+color:white;
+
+
+padding:14px 32px;
+
+
+border-radius:30px;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+background:#356447;
+
+
+transform:translateY(-3px);
+
+
+}
+
+
+
+
+
+/* =====================
+SECTION
+===================== */
+
+
+section{
+
+
+padding:90px 8%;
+
+
+}
+
+
+
+h2{
+
+
+text-align:center;
+
+font-size:40px;
+
+margin-bottom:45px;
+
+
+}
+
+
+
+/* =====================
+MENU
+===================== */
+
+
+#menu{
+
+
+padding-bottom:10px;
+
+
+}
+
+
+
+.menu-category-section{
+
+
+padding:35px 8%;
+
+
+}
+
+
+
+.category-title{
+
+
+font-size:24px;
+
+font-weight:700;
+
+color:#21432f;
+
+margin-bottom:20px;
+
+padding-left:15px;
+
+border-left:5px solid #b47732;
+
+
+}
+
+
+
+.menu-container{
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fill,minmax(260px,1fr));
+
+
+gap:25px;
+
+
+}
+
+
+
+.menu-card{
+
+
+background:white;
+
+
+border-radius:25px;
+
+
+overflow:hidden;
+
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.1);
+
+
+}
+
+
+
+.menu-card img{
+
+
+width:100%;
+
+
+height:260px;
+
+
+object-fit:cover;
+
+
+}
+
+
+
+.menu-info{
+
+
+padding:20px;
+
+
+}
+
+
+
+.menu-info h3{
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+.price{
+
+
+color:#b47732;
+
+font-weight:bold;
+
+
+font-size:18px;
+
+
+margin:10px 0;
+
+
+}
+
+
+
+/* =====================
+CART
+===================== */
+
+
+.cart-box{
+
+
+background:white;
+
+
+padding:30px;
+
+
+border-radius:25px;
+
+
+}
+
+
+
+.cart-item{
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+align-items:center;
+
+
+padding:15px 0;
+
+
+border-bottom:1px solid #ddd;
+
+
+}
+
+
+
+.qty{
+
+
+display:flex;
+
+
+gap:10px;
+
+
+align-items:center;
+
+
+}
+
+
+
+.qty button{
+
+
+padding:5px 12px;
+
+
+border-radius:10px;
+
+
+}
+
+
+
+
+.total{
+
+
+margin-top:25px;
+
+
+font-size:25px;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+#toCheckoutBtn{
+
+
+margin-top:20px;
+
+
+width:100%;
+
+
+}
+
+
+
+#toCheckoutBtn:disabled{
+
+
+background:#a9b5ad;
+
+
+cursor:not-allowed;
+
+
+}
+
+
+
+#toCheckoutBtn:disabled:hover{
+
+
+background:#a9b5ad;
+
+
+transform:none;
+
+
+}
+
+
+
+
+
+/* =====================
+CHECKOUT
+===================== */
+
+
+.checkout-box{
+
+
+background:white;
+
+
+padding:30px;
+
+
+border-radius:25px;
+
+
+}
+
+
+
+
+input,
+textarea{
+
+
+width:100%;
+
+
+padding:15px;
+
+
+margin:10px 0 20px;
+
+
+border-radius:12px;
+
+
+border:1px solid #ddd;
+
+
+}
+
+
+
+textarea{
+
+
+height:120px;
+
+
+}
+
+
+
+/* =====================
+PAYMENT
+===================== */
+
+
+.payment{
+
+
+background:#ead9bd;
+
+
+text-align:center;
+
+
+}
+
+
+
+.payment-box{
+
+
+background:white;
+
+
+padding:35px;
+
+
+border-radius:25px;
+
+
+}
+
+
+
+.qris{
+
+
+width:250px;
+
+
+margin:25px;
+
+
+}
+
+
+
+
+/* =====================
+SUCCESS ORDER
+===================== */
+
+
+.success{
+
+
+display:none;
+
+
+background:#21432f;
+
+
+color:white;
+
+
+text-align:center;
+
+
+}
+
+
+
+.order-number{
+
+
+font-size:45px;
+
+
+font-weight:bold;
+
+
+margin:20px 0;
+
+
+}
+
+
+
+.status{
+
+
+display:inline-block;
+
+
+background:#e5c477;
+
+
+color:#333;
+
+
+padding:10px 25px;
+
+
+border-radius:20px;
+
+
+}
+
+
+
+
+
+/* =====================
+MODAL
+===================== */
+
+
+#confirmModal{
+
+
+display:none;
+
+
+position:fixed;
+
+
+inset:0;
+
+
+background:rgba(0,0,0,.6);
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+z-index:200;
+
+
+}
+
+
+
+.modal-box{
+
+
+background:white;
+
+
+padding:35px;
+
+
+border-radius:25px;
+
+
+text-align:center;
+
+
+}
+
+
+
+.modal-box button{
+
+
+margin:10px;
+
+
+}
+
+
+
+
+footer{
+
+
+background:#21432f;
+
+
+color:white;
+
+
+text-align:center;
+
+
+padding:25px;
+
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+.hero h1{
+
+
+font-size:45px;
+
+
+}
+
+
+
+nav{
+
+
+display:none;
+
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+
+<img src="logo tepiranu.png" alt="Logo TEPIRANU">
+
+</div>
+
+
+<nav>
+
+<a href="#menu">
+Menu
+</a>
+
+<a href="#cart">
+Keranjang
+</a>
+
+<a href="#checkout">
+Checkout
+</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<h1>
+Coffee<br>
+By The Lake
+</h1>
+
+
+<p>
+Nikmati kopi pilihan dengan suasana
+tenang di tepi danau.
+</p>
+
+
+
+<a href="#menu">
+
+<button>
+Pesan Sekarang
+</button>
+
+</a>
+
+</div>
+
+
+</section>
+
+<!-- MENU -->
+
+<section id="menu">
+
+<h2>
+Menu TEPIRANU COFFEE
+</h2>
+
+</section>
+
+<section id="menu-coffee" class="menu-category-section">
+
+<h3 class="category-title">
+Coffee
+</h3>
+
+<div class="menu-container" id="menuCoffee">
+</div>
+
+</section>
+
+<section id="menu-manualbrew" class="menu-category-section">
+
+<h3 class="category-title">
+Manual Brew
+</h3>
+
+<div class="menu-container" id="menuManualBrew">
+</div>
+
+</section>
+
+<section id="menu-noncoffee" class="menu-category-section">
+
+<h3 class="category-title">
+Non-Coffee
+</h3>
+
+<div class="menu-container" id="menuNonCoffee">
+</div>
+
+</section>
+
+<section id="menu-snack" class="menu-category-section">
+
+<h3 class="category-title">
+Snack
+</h3>
+
+<div class="menu-container" id="menuSnack">
+</div>
+
+</section>
+
+<section id="menu-berat" class="menu-category-section">
+
+<h3 class="category-title">
+Makanan Berat
+</h3>
+
+<div class="menu-container" id="menuBerat">
+</div>
+
+</section>
+
+<section id="menu-dessert" class="menu-category-section">
+
+<h3 class="category-title">
+Dessert
+</h3>
+
+<div class="menu-container" id="menuDessert">
+</div>
+
+</section>
+
+<!-- CART -->
+
+<section id="cart">
+
+<h2>
+Keranjang
+</h2>
+
+<div class="cart-box">
+
+<div id="cartContainer">
+
+Keranjang masih kosong
+
+</div>
+
+<div class="total">
+
+Total:
+
+<span id="totalPrice">
+
+Rp0
+
+</span>
+
+</div>
+
+<button id="toCheckoutBtn" onclick="goToCheckout()">
+
+Lanjut ke Checkout
+
+</button>
+
+</div>
+
+</section>
+
+<!-- CHECKOUT -->
+
+<section id="checkout">
+
+<h2>
+Checkout
+</h2>
+
+<div class="checkout-box">
+
+<label>
+Nama Pemesan
+</label>
+
+<input 
+id="customerName"
+placeholder="Masukkan nama">
+
+<label>
+Catatan Pesanan
+</label>
+
+<textarea
+id="customerNote"
+placeholder="Contoh: less sugar, tanpa es">
+
+</textarea>
+
+<button onclick="checkout()">
+
+Bayar Sekarang
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PAYMENT QRIS -->
+
+<section 
+id="payment"
+class="payment"
+style="display:none;">
+
+
+<h2>
+Pembayaran QRIS
+</h2>
+
+<div class="payment-box">
+
+<h3>
+Detail Pesanan
+</h3>
+
+<br>
+
+<div id="orderSummary">
+
+</div>
+
+<h2 id="paymentTotal">
+
+Rp0
+
+</h2>
+
+<img 
+class="qris"
+src="images/qris.png">
+
+<p>
+
+Scan QRIS untuk menyelesaikan pembayaran
+
+</p>
+
+<button onclick="finishPayment()">
+
+Saya Sudah Bayar
+
+</button>
+
+</div>
+
+</section>
+
+<!-- HALAMAN PESANAN BERHASIL -->
+
+<section 
+id="success"
+class="success">
+
+<h2>
+Pembayaran Berhasil ✓
+</h2>
+
+<p>
+Nomor Pesanan Anda
+</p>
+
+<div class="order-number"
+id="orderNumber">
+
+</div>
+
+<div id="successDetail">
+
+</div>
+
+<br>
+
+<h3>
+Status Pesanan
+</h3>
+
+
+
+<br>
+
+
+
+<div class="status">
+
+MENUNGGU DIPROSES
+
+</div>
+
+
+
+
+<br><br>
+
+
+
+<p>
+
+Silahkan tunjukkan nomor pesanan
+kepada kasir untuk pengambilan.
+
+</p>
+
+
+
+<br>
+
+
+
+<button onclick="backMenu()">
+
+Kembali ke Menu
+
+</button>
+
+
+
+</section>
+
+<!-- MODAL KONFIRMASI -->
+
+
+<div id="confirmModal">
+
+
+<div class="modal-box">
+
+
+<h3>
+Tambah Keranjang?
+</h3>
+
+
+<p id="confirmText">
+
+</p>
+
+
+
+<button onclick="confirmAdd()">
+
+Ya, Tambahkan
+
+</button>
+
+
+
+<button onclick="closeModal()">
+
+Batal
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+
+
+TEPIRANU Coffee & Chill
+
+<br>
+
+© 2026
+
+
+</footer>
+
+<script>
+
+
+// DATA MENU
+
+
+const products = [
+
+/* ===== COFFEE ===== */
+
+{
+id:1,
+name:"Americano",
+price:18000,
+image:"americano.png",
+desc:"Perpaduan espresso dengan air putih",
+category:"Coffee"
+},
+
+{
+id:1,
+name:"Latte Ice",
+price:18000,
+image:"latte ice.png",
+desc:"Espresso, susu creamy dan gula aren khas Tepiranu",
+category:"Coffee"
+},
+
+{
+id:2,
+name:"Cappucino Ice",
+price:18000,
+image:"cappucino.png",
+desc:"Espresso, susu creamy dan gula aren khas Tepiranu",
+category:"Coffee"
+},
+
+{
+id:2,
+name:"Kopi susu Aren",
+price:18000,
+image:"kopi susu aren.png",
+desc:"kopi susu dengan gula aren",
+category:"Coffee"
+},
+
+{
+id:3,
+name:"Kopi Susu Pandan",
+price:23000,
+image:"kopi susu pandan.png",
+desc:"kopi susu dengan syrup pandan",
+category:"Coffee"
+},
+
+{
+id:4,
+name:"Caramel Latte",
+price:22000,
+image:"kopi susu caramel.png",
+desc:"Kopi susu dengan syrup caramel",
+category:"Coffee"
+},
+
+{
+id:5,
+name:"Hazelnut Latte",
+price:18000,
+image:"kopi susu hazelnut.png",
+desc:"Kopi susu dengan syrup hazelnut",
+category:"Coffee"
+},
+
+{
+id:6,
+name:"Kopi Susu Baileys",
+price:18000,
+image:"kopi susu baileys.png",
+desc:"kopi susu dengan campuran syrup airish dan raisin",
+category:"Coffee"
+},
+
+{
+id:6,
+name:"Kopi Susu Rum Regal",
+price:18000,
+image:"kopi susu rum regal.png",
+desc:"kopi susu dengan campuran syrup raisin dan terdapat topping biskuit regal diatasnya",
+category:"Coffee"
+},
+
+{
+id:6,
+name:"Hot Latte",
+price:18000,
+image:"latte hot.png",
+desc:"perpaduan espresso dengan susu",
+category:"Coffee"
+},
+
+{
+id:6,
+name:"Cappucino Hot",
+price:18000,
+image:"cappucino hot.png",
+desc:"perpaduan espresso dengan susu yang rasa kopi lebih strong",
+category:"Coffee"
+},
+
+/* ===== MANUAL BREW ===== */
+
+{
+id:7,
+name:"V60-Hot",
+price:20000,
+image:"v-60.png",
+desc:"Kopi single origin diseduh dengan metode pour over V60",
+category:"Manual Brew"
+},
+
+{
+id:8,
+name:"Japanese",
+price:20000,
+image:"japanese.jpg",
+desc:"Kopi robusta diseduh perlahan dengan metode drip khas Vietnam",
+category:"Manual Brew"
+},
+
+{
+id:8,
+name:"Aeropress",
+price:20000,
+image:"AeroPress.jpg",
+desc:"Kopi robusta diseduh perlahan dengan metode drip khas Vietnam",
+category:"Manual Brew"
+},
+
+/* ===== NON-COFFEE ===== */
+
+{
+id:3,
+name:"Chocolate",
+price:20000,
+image:"chocolate ice.png",
+desc:"Fresh strawberry milk creamy",
+category:"Non-Coffee"
+},
+
+{
+id:4,
+name:"Matcha Latte",
+price:22000,
+image:"matcha latte.png",
+desc:"Matcha creamy dengan susu lembut",
+category:"Non-Coffee"
+},
+
+/* ===== SNACK ===== */
+
+{
+id:9,
+name:"Kentang Goreng",
+price:15000,
+image:"kentang goreng.png",
+desc:"French fries renyah dengan saus pilihan",
+category:"Snack"
+},
+
+{
+id:10,
+name:"Pisang Goreng Crispy",
+price:14000,
+image:"pisang goreng.png",
+desc:"Pisang goreng crispy dengan taburan keju",
+category:"Snack"
+},
+
+/* ===== MAKANAN BERAT ===== */
+
+{
+id:11,
+name:"Nasi Goreng Tepiranu",
+price:25000,
+image:"nasi goreng.png",
+desc:"Nasi goreng spesial dengan telur dan ayam suwir",
+category:"Makanan Berat"
+},
+
+{
+id:12,
+name:"Mie Goreng Spesial",
+price:23000,
+image:"mie goreng.png",
+desc:"Mie goreng dengan topping sosis dan telur",
+category:"Makanan Berat"
+},
+
+/* ===== DESSERT ===== */
+
+{
+id:13,
+name:"Cheesecake Slice",
+price:22000,
+image:"cheesecake.png",
+desc:"Cheesecake lembut dengan topping berry",
+category:"Dessert"
+},
+
+{
+id:14,
+name:"Chocolate Brownies",
+price:18000,
+image:"brownies.png",
+desc:"Brownies coklat lumer dengan taburan almond",
+category:"Dessert"
+}
+
+];
+
+
+
+const categoryOrder = [
+"Coffee",
+"Non-Coffee",
+"Manual Brew",
+"Snack",
+"Makanan Berat",
+"Dessert"
+];
+
+
+
+
+let cart=[];
+
+
+let selectedProduct=null;
+
+
+
+
+
+// MENAMPILKAN MENU
+
+
+const categoryContainerMap = {
+"Coffee":"menuCoffee",
+"Non-Coffee":"menuNonCoffee",
+"Manual Brew":"menuManualBrew",
+"Snack":"menuSnack",
+"Makanan Berat":"menuBerat",
+"Dessert":"menuDessert"
+};
+
+
+
+function renderCard(item){
+
+
+return `
+
+
+<div class="menu-card">
+
+
+<img src="${item.image}">
+
+
+
+<div class="menu-info">
+
+
+<h3>
+${item.name}
+</h3>
+
+
+<p>
+${item.desc}
+</p>
+
+
+<div class="price">
+
+Rp${item.price.toLocaleString()}
+
+</div>
+
+
+
+
+<button onclick="openModal(${item.id})">
+
+Tambah Keranjang
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+`;
+
+
+}
+
+
+
+function loadMenu(){
+
+
+categoryOrder.forEach(category=>{
+
+
+let containerId =
+categoryContainerMap[category];
+
+
+
+let box =
+document.getElementById(
+containerId
+);
+
+
+
+if(!box){
+
+return;
+
+}
+
+
+
+let items =
+products.filter(
+item => item.category === category
+);
+
+
+
+box.innerHTML =
+items.map(renderCard).join("");
+
+
+});
+
+
+}
+
+
+
+// ============================
+// MODAL TAMBAH KERANJANG
+// ============================
+
+
+function openModal(id){
+
+
+selectedProduct =
+products.find(
+item => item.id === id
+);
+
+
+
+document.getElementById(
+"confirmText"
+).innerHTML =
+
+`Apakah ingin menambahkan 
+<b>${selectedProduct.name}</b>
+ke keranjang?`;
+
+
+
+document.getElementById(
+"confirmModal"
+).style.display="flex";
+
+
+}
+
+
+
+
+
+function closeModal(){
+
+
+document.getElementById(
+"confirmModal"
+).style.display="none";
+
+
+}
+
+
+
+
+
+// ============================
+// TAMBAH PRODUK
+// ============================
+
+
+function confirmAdd(){
+
+
+
+let item =
+cart.find(
+product => product.id === selectedProduct.id
+);
+
+
+
+if(item){
+
+
+item.qty++;
+
+
+}
+
+else{
+
+
+cart.push({
+
+id:selectedProduct.id,
+
+name:selectedProduct.name,
+
+price:selectedProduct.price,
+
+qty:1
+
+
+});
+
+
+}
+
+
+
+renderCart();
+
+
+closeModal();
+
+
+
+}
+
+
+
+
+
+
+
+// ============================
+// TAMPILKAN KERANJANG
+// ============================
+
+
+function renderCart(){
+
+
+let box =
+document.getElementById(
+"cartContainer"
+);
+
+
+
+box.innerHTML="";
+
+
+
+let total=0;
+
+
+
+if(cart.length===0){
+
+
+box.innerHTML=
+"Keranjang masih kosong";
+
+
+document.getElementById(
+"totalPrice"
+).innerHTML="Rp0";
+
+
+document.getElementById(
+"toCheckoutBtn"
+).disabled=true;
+
+
+return;
+
+
+}
+
+
+
+
+cart.forEach(item=>{
+
+
+let subtotal =
+item.price *
+item.qty;
+
+
+
+total += subtotal;
+
+
+
+
+box.innerHTML += `
+
+
+<div class="cart-item">
+
+
+<div>
+
+
+<b>
+${item.name}
+</b>
+
+
+<br>
+
+
+Rp${item.price.toLocaleString()}
+
+
+</div>
+
+
+
+
+
+<div class="qty">
+
+
+<button onclick="changeQty(${item.id},-1)">
+-
+</button>
+
+
+
+<span>
+
+${item.qty}
+
+</span>
+
+
+
+
+<button onclick="changeQty(${item.id},1)">
++
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+`;
+
+
+
+});
+
+
+
+
+
+document.getElementById(
+"totalPrice"
+).innerHTML =
+
+"Rp"+total.toLocaleString();
+
+
+
+document.getElementById(
+"toCheckoutBtn"
+).disabled=false;
+
+
+
+}
+
+
+
+// ============================
+// LANJUT KE CHECKOUT
+// ============================
+
+
+function goToCheckout(){
+
+
+if(cart.length===0){
+
+
+alert(
+"Keranjang masih kosong, silakan tambahkan menu terlebih dahulu"
+);
+
+
+return;
+
+
+}
+
+
+window.location.href="#checkout";
+
+
+}
+
+
+
+
+
+
+
+
+// ============================
+// QUANTITY
+// ============================
+
+
+
+function changeQty(id,value){
+
+
+
+let item =
+cart.find(
+product=>product.id===id
+);
+
+
+
+item.qty += value;
+
+
+
+if(item.qty<=0){
+
+
+cart =
+cart.filter(
+product=>product.id!==id
+);
+
+
+}
+
+
+
+renderCart();
+
+
+}
+
+
+
+
+
+
+
+
+
+// ============================
+// CHECKOUT KE QRIS
+// ============================
+
+
+function checkout(){
+
+
+
+if(cart.length===0){
+
+
+alert(
+"Keranjang masih kosong"
+);
+
+return;
+
+}
+
+let nama =
+document.getElementById(
+"customerName"
+).value;
+
+let catatan =
+document.getElementById(
+"customerNote"
+).value;
+
+if(nama===""){
+
+alert(
+"Masukkan nama pemesan"
+);
+
+return;
+
+}
+
+let total=0;
+
+let detail="";
+
+cart.forEach(item=>{
+
+let subtotal =
+item.price *
+item.qty;
+
+total += subtotal;
+
+detail += `
+
+<p>
+
+☕ ${item.name}
+
+<br>
+
+Jumlah : ${item.qty}
+
+<br>
+
+Subtotal :
+Rp${subtotal.toLocaleString()}
+
+</p>
+
+<hr>
+
+`;
+
+});
+
+detail += `
+
+<p>
+
+Nama :
+
+<b>${nama}</b>
+
+</p>
+
+<p>
+
+Catatan :
+
+${catatan}
+
+</p>
+
+`;
+
+document.getElementById(
+"orderSummary"
+).innerHTML =
+detail;
+
+document.getElementById(
+"paymentTotal"
+).innerHTML =
+
+"Rp"+total.toLocaleString();
+
+document.getElementById(
+"payment"
+).style.display="block";
+
+window.location.href="#payment";
+
+}
+
+// ============================
+// SELESAI BAYAR
+// ============================
+
+function finishPayment(){
+
+let nomor =
+
+"TPR-" +
+
+new Date().getDate()
+
++
+
+(new Date().getMonth()+1)
+
++
+
+"-"
+
++
+
+Math.floor(
+Math.random()*900+100
+);
+
+let detail="";
+
+let total=0;
+
+cart.forEach(item=>{
+
+let subtotal =
+item.price*item.qty;
+
+total += subtotal;
+
+detail += `
+
+<p>
+
+☕ ${item.name}
+
+<br>
+
+${item.qty} Cup
+
+<br>
+
+Rp${subtotal.toLocaleString()}
+
+</p>
+
+`;
+
+
+});
+
+document.getElementById(
+"orderNumber"
+).innerHTML = nomor;
+
+
+document.getElementById(
+"successDetail"
+).innerHTML = `
+
+<hr>
+
+<p>
+
+Total Pembayaran:
+
+<b>
+Rp${total.toLocaleString()}
+</b>
+
+</p>
+
+${detail}
+
+<hr>
+
+<p>
+
+Silahkan ambil pesanan di kasir.
+
+</p>
+
+`;
+
+document.getElementById(
+"payment"
+).style.display="none";
+
+document.getElementById(
+"success"
+).style.display="block";
+
+window.location.href="#success";
+
+cart=[];
+
+renderCart();
+
+}
+
+// ============================
+// KEMBALI MENU
+// ============================
+
+function backMenu(){
+
+document.getElementById(
+"success"
+).style.display="none";
+
+window.location.href="#menu";
+
+}
+
+// ============================
+// START WEBSITE
+// ============================
+
+
+loadMenu();
+
+renderCart();
+
+
+</script>
+
+
+</body>
+
+</html>
